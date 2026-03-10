@@ -14,6 +14,7 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    return `/${l}${path}`
+    const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+    return `${base}/${l}${path === '/' ? '' : path}`;
   }
 }
