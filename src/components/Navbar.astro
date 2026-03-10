@@ -1,0 +1,56 @@
+---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10 px-6 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <a href={translatePath('/')} class="text-2xl font-bold tracking-tighter metallic-gradient flex items-center" id="logo-container">
+      <span id="typewriter" class="inline-block"></span>
+      <span class="inline-block w-2 bg-white ml-1 h-6 animate-[blink_1s_step-end_infinite]"></span>
+    </a>
+    
+    <div class="hidden md:flex gap-8 items-center">
+      <a href={translatePath('/')} class="text-sm font-medium hover:text-white transition-colors">{t('nav.home')}</a>
+      <a href={translatePath('/services')} class="text-sm font-medium hover:text-white transition-colors">{t('nav.services')}</a>
+      <a href={translatePath('/about')} class="text-sm font-medium hover:text-white transition-colors">{t('nav.about')}</a>
+    </div>
+
+    <!-- Language Toggle & Contact -->
+    <div class="flex gap-6 items-center">
+       <div class="flex gap-2">
+         <a href="/es" class={`text-sm ${lang === 'es' ? 'text-white font-bold' : 'text-neutral-500 hover:text-white transition'}`}>ES</a>
+         <span class="text-white/20">|</span>
+         <a href="/en" class={`text-sm ${lang === 'en' ? 'text-white font-bold' : 'text-neutral-500 hover:text-white transition'}`}>EN</a>
+       </div>
+       <a href={translatePath('/contact')} class="hidden md:block px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-sm font-medium transition-all">{t('nav.contact')}</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const text = "Dot0x";
+  const speed = 150; // ms per letter
+  let i = 0;
+  
+  function typeWriter() {
+    const el = document.getElementById("typewriter");
+    if (el && i < text.length) {
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  // Run when Astro page loads or swaps
+  document.addEventListener('astro:page-load', () => {
+    i = 0;
+    const el = document.getElementById("typewriter");
+    if(el) el.innerHTML = '';
+    typeWriter();
+  });
+  
+  // also run on initial load
+  typeWriter();
+</script>

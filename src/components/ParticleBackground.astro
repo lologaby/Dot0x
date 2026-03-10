@@ -1,0 +1,58 @@
+<div id="tsparticles" class="absolute inset-0 z-[1] pointer-events-none overflow-hidden h-full w-full"></div>
+
+<script>
+  import { tsParticles } from "@tsparticles/engine";
+  import { loadSlim } from "@tsparticles/slim";
+
+  async function loadParticles() {
+    await loadSlim(tsParticles);
+    
+    await tsParticles.load({
+      id: "tsparticles",
+      options: {
+        background: { color: { value: "transparent" } },
+        fullScreen: { enable: false },
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "grab" },
+            resize: { enable: true, delay: 0.5 }
+          },
+          modes: {
+            grab: { distance: 150, links: { opacity: 0.5 } }
+          },
+        },
+        particles: {
+          color: { value: ["#a9adb5", "#e4e6ea", "#767a83"] },
+          links: {
+            color: "#767a83",
+            distance: 120,
+            enable: true,
+            opacity: 0.2,
+            width: 1,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: { default: "bounce" },
+            random: true,
+            speed: 0.8,
+            straight: false,
+          },
+          number: {
+            density: { enable: true, width: 800, height: 800 },
+            value: 60,
+          },
+          opacity: { value: 0.4 },
+          shape: { type: "circle" },
+          size: { value: { min: 1, max: 3 } },
+        },
+        detectRetina: true,
+      }
+    });
+  }
+
+  // Load immediately for initial render, and bind to Astro view transitions
+  loadParticles();
+  document.addEventListener('astro:page-load', loadParticles);
+</script>

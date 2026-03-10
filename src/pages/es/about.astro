@@ -1,0 +1,41 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+const t = useTranslations('es');
+---
+<Layout title="Sobre Mí">
+  <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      <!-- Placeholder Image / Graphic -->
+      <div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden glass-panel flex items-center justify-center">
+         <div class="absolute inset-0 bg-gradient-to-tr from-zinc-800 to-zinc-400 opacity-20"></div>
+         <svg xmlns="http://www.w3.org/2000/svg" class="w-32 h-32 text-white/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
+
+      <!-- Bio Content -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold metallic-gradient mb-6">Alex Berrios Mangual</h1>
+        <h2 class="text-xl text-white font-medium mb-8">Fundador de Dot0x | Experto en Tecnología</h2>
+        
+        <div class="space-y-6 text-neutral-400 leading-relaxed">
+          <p>
+            ¡Hola! Soy Alex. Cuento con una sólida experiencia en la industria tecnológica, especializándome en la creación de infraestructuras robustas, automatización de procesos y el desarrollo de Agentes de Inteligencia Artificial que impulsan el rendimiento empresarial.
+          </p>
+          <p>
+            Mi objetivo con Dot0x es empoderar a las empresas, ofreciendo soluciones de nivel corporativo adaptadas a las necesidades del mercado local en Puerto Rico y a nivel global. Me apasiona simplificar lo complejo y demostrar cómo la tecnología, desde el SEO hasta la infraestructura de servidores, puede ser el mejor aliado para el crecimiento.
+          </p>
+          <!-- Placeholder comment for user: Please provide more details or an excerpt from your LinkedIn to expand this! -->
+        </div>
+
+        <div class="mt-10 flex gap-4">
+          <a href="https://pr.linkedin.com/in/alex-berrios-mangual-b26b5a241" target="_blank" class="px-6 py-3 bg-[#0a66c2] hover:bg-[#004182] text-white font-semibold rounded-full transition-colors flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            Conectar en LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

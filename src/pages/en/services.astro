@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+const t = useTranslations('en');
+
+const services = [
+  {
+    title: 'Task Automation',
+    description: 'We eliminate manual and repetitive work from your company by connecting your favorite apps and building efficient workflows.',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>',
+  },
+  {
+    title: 'Google SEO Optimization',
+    description: 'We make your website visible to potential customers by utilizing the best organic search engine positioning practices.',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-9 5 18 3-9h5"></path></svg>',
+  },
+  {
+    title: 'IT Consulting',
+    description: 'We advise you on choosing, implementing, and managing the right technology for the sustainable growth of your business.',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>',
+  },
+  {
+    title: 'Network & Server Infrastructure',
+    description: 'We design, configure, and maintain your companys network infrastructure to guarantee speed, security, and total availability.',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>',
+  },
+  {
+    title: 'Infrastructure Monitoring',
+    description: '24/7 supervision of your servers and network equipment to prevent failures before they happen, ensuring operational continuity.',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
+  },
+  {
+    title: 'Experimental AI Agents',
+    description: 'Development of AI assistants that serve customers, generate data insights, and operate autonomously within your ecosystems.',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>',
+  }
+];
+---
+<Layout title="Our Services">
+  <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold metallic-gradient mb-6">Our Services</h1>
+      <p class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto">
+        We implement high-level integral solutions to scale your business in the digital world.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="glass-panel p-8 rounded-2xl glass-panel-hover flex flex-col h-full">
+          <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6" set:html={service.icon} />
+          <h3 class="text-2xl font-bold text-white mb-4">{service.title}</h3>
+          <p class="text-neutral-400 leading-relaxed flex-grow">{service.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-24 glass-panel p-12 rounded-3xl text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent"></div>
+        <div class="relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-6">Ready to transform your company?</h2>
+            <p class="text-neutral-400 mb-8 max-w-xl mx-auto">Contact us today and discover how our technologies can optimize your operations.</p>
+            <a href="tel:7874609493" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Call {t('contact.phone')}
+            </a>
+        </div>
+    </div>
+  </section>
+</Layout>

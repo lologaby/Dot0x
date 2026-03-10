@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+const t = useTranslations('en');
+---
+<Layout title="Contact">
+  <section class="pt-32 pb-20 px-6 max-w-4xl mx-auto w-full">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-6xl font-bold metallic-gradient mb-6">Get in Touch</h1>
+      <p class="text-lg text-neutral-400">Have a project in mind? Let's talk about how Dot0x can help you achieve your goals.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Direct Contact Info -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-center">
+            <h2 class="text-2xl font-bold text-white mb-6">Direct Information</h2>
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-neutral-400 block">Phone</p>
+                        <a href="tel:7874609493" class="text-lg font-medium text-white hover:text-neutral-300 transition">{t('contact.phone')}</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-neutral-400 block">LinkedIn</p>
+                        <a href="https://pr.linkedin.com/in/alex-berrios-mangual-b26b5a241" target="_blank" class="text-lg font-medium text-white hover:text-neutral-300 transition">Alex Berrios Mangual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form Placeholder -->
+        <form class="glass-panel p-8 rounded-2xl flex flex-col gap-4">
+            <div>
+                <label class="block text-sm text-neutral-400 mb-2">Name</label>
+                <input type="text" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition" placeholder="Your name" />
+            </div>
+            <div>
+                <label class="block text-sm text-neutral-400 mb-2">Email</label>
+                <input type="email" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition" placeholder="you@email.com" />
+            </div>
+            <div>
+                <label class="block text-sm text-neutral-400 mb-2">Message</label>
+                <textarea class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition min-h-[120px]" placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="button" class="mt-2 w-full bg-white text-black font-semibold rounded-lg px-4 py-3 hover:bg-neutral-200 transition">
+                Send Message
+            </button>
+        </form>
+    </div>
+  </section>
+</Layout>
