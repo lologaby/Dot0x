@@ -34,7 +34,7 @@ export const ui = {
     'services.2.title': 'Dominio en Google (SEO)',
     'services.2.desc': 'No te escondas en la página 2. Te posicionamos frente a los clientes que ya están buscando lo que vendes, justo en el momento en que quieren comprar.',
     'services.3.title': 'Automatización Operativa',
-    'services.3.desc': 'Integramos tus sistemas (CRM, Facturación, Emails) para que se comuniquen solos. Cero errores humanos. 100% de eficiencia.',
+    'services.3.desc': 'Optimizamos tus flujos de trabajo e integramos tus sistemas clave. Te ayudamos a conectar herramientas compatibles para eliminar errores manuales y recuperar horas de tu semana.',
     
     // TRUST / WHY US
     'trust.title': '¿Por qué Dot0x?',
@@ -75,7 +75,7 @@ export const ui = {
     'services.2.title': 'Google Dominance (SEO)',
     'services.2.desc': 'Don\'t hide on page 2. We position you right in front of customers who are actively searching for what you sell, precisely when they want to buy.',
     'services.3.title': 'Workflow Automation',
-    'services.3.desc': 'We connect your systems (CRM, Billing, Emails) so they talk to each other automatically. Zero human error. 100% efficiency.',
+    'services.3.desc': 'We optimize your workflows and integrate your key systems. We help connect compatible tools to eliminate manual errors and win back hours of your week.',
     
     // TRUST / WHY US
     'trust.title': 'Why Dot0x?',
