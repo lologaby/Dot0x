@@ -19,17 +19,18 @@ const translatePath = useTranslatedPath(lang);
 
     <!-- Language Toggle & Contact -->
     <div class="flex gap-6 items-center">
-        <div class="flex gap-3 text-lg">
-         <a href={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/es`} class={`transition-transform hover:scale-110 ${lang === 'es' ? 'opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'opacity-50 hover:opacity-100'}`} title="Español (PR)">🇵🇷</a>
-         <a href={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/en`} class={`transition-transform hover:scale-110 ${lang === 'en' ? 'opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'opacity-50 hover:opacity-100'}`} title="English (US)">🇺🇸</a>
-       </div>
+        <div class="flex items-center gap-1 text-lg">
+          <a href={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/es`} class={`transition-all hover:scale-110 leading-none ${lang === 'es' ? 'opacity-100 scale-110 ring-2 ring-white/60 rounded-sm shadow-[0_0_10px_rgba(255,255,255,0.6)]' : 'opacity-40 hover:opacity-80'}`} title="Español (PR)">🇵🇷</a>
+          <span class="text-white/30 text-sm font-light select-none">/</span>
+          <a href={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/en`} class={`transition-all hover:scale-110 leading-none ${lang === 'en' ? 'opacity-100 scale-110 ring-2 ring-white/60 rounded-sm shadow-[0_0_10px_rgba(255,255,255,0.6)]' : 'opacity-40 hover:opacity-80'}`} title="English (US)">🇺🇸</a>
+        </div>
        <a href={translatePath('/contact')} class="hidden md:block px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-sm font-medium transition-all">{t('nav.contact')}</a>
     </div>
   </div>
 </nav>
 
 <script>
-  const text = "Dot0x Puerto Rico";
+  const text = "Dot0x - Puerto Rico";
   const speed = 100; // ms per letter
   let i = 0;
   
