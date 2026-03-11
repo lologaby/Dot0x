@@ -5,30 +5,35 @@
   import { loadSlim } from "@tsparticles/slim";
 
   async function loadParticles() {
+    // Skip if already loaded for this container instance
+    if ((document.getElementById('tsparticles') as any)?._ps) return;
+
     await loadSlim(tsParticles);
-    
+
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
     await tsParticles.load({
       id: "tsparticles",
       options: {
         background: { color: { value: "transparent" } },
         fullScreen: { enable: false },
-        fpsLimit: 60,
+        fpsLimit: isMobile ? 30 : 60,
         interactivity: {
           events: {
-            onHover: { enable: true, mode: "grab" },
-            resize: { enable: true, delay: 0.5 }
+            onHover: { enable: !isMobile, mode: "grab" },
+            resize: { enable: true, delay: 0.5 },
           },
           modes: {
-            grab: { distance: 150, links: { opacity: 0.5 } }
+            grab: { distance: 150, links: { opacity: 0.5 } },
           },
         },
         particles: {
           color: { value: ["#a9adb5", "#e4e6ea", "#767a83"] },
           links: {
             color: "#767a83",
-            distance: 120,
+            distance: isMobile ? 100 : 120,
             enable: true,
-            opacity: 0.2,
+            opacity: isMobile ? 0.15 : 0.2,
             width: 1,
           },
           move: {
@@ -36,23 +41,22 @@
             enable: true,
             outModes: { default: "bounce" },
             random: true,
-            speed: 0.8,
+            speed: isMobile ? 0.4 : 0.8,
             straight: false,
           },
           number: {
             density: { enable: true, width: 800, height: 800 },
-            value: 60,
+            value: isMobile ? 25 : 60,
           },
-          opacity: { value: 0.4 },
+          opacity: { value: isMobile ? 0.3 : 0.4 },
           shape: { type: "circle" },
-          size: { value: { min: 1, max: 3 } },
+          size: { value: { min: 1, max: isMobile ? 2 : 3 } },
         },
         detectRetina: true,
       }
     });
   }
 
-  // Load immediately for initial render, and bind to Astro view transitions
   loadParticles();
   document.addEventListener('astro:page-load', loadParticles);
 </script>

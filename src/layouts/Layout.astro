@@ -69,3 +69,23 @@ const fullTitle = `${title} | Dot0x`;
         <Footer />
 	</body>
 </html>
+
+<script>
+  // Scroll-reveal: observe .reveal elements and add .visible when in viewport
+  function initReveal() {
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.transitionDelay = (e.target as HTMLElement).dataset.delay ?? '0ms';
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  }
+  document.addEventListener('astro:page-load', initReveal);
+  initReveal();
+</script>
