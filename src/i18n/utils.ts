@@ -1,8 +1,8 @@
 import { ui, defaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
-  // Strip the Astro base path (e.g. '/Dot0x') before extracting the lang segment
-  const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
+  // Strip the Astro base path before extracting the lang segment
+  const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
   const pathname = base && url.pathname.startsWith(base)
     ? url.pathname.slice(base.length)
     : url.pathname;
