@@ -22,14 +22,14 @@ const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
     <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center relative">
 
       <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 md:mb-8 leading-tight hero-enter mix-blend-screen">
-        <div class="relative inline-block overflow-hidden pb-4 bg-transparent">
+        <div class="relative inline-block overflow-hidden bg-transparent">
           <!-- The video itself, auto-playing on all devices -->
-          <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-1000" oncanplay="this.classList.remove('opacity-0'); this.nextElementSibling.classList.remove('opacity-0');" onloadeddata="this.classList.remove('opacity-0'); this.nextElementSibling.classList.remove('opacity-0');">
+          <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover z-0">
             <source src={`${base}/videos/abstract-metal.mp4`} type="video/mp4" />
           </video>
           
           <!-- The text that clips the video through mix-blend-mode: multiply -->
-          <span class="relative z-10 bg-black text-white px-2 inline-block opacity-0 transition-opacity duration-1000 pb-4 mix-blend-multiply">
+          <span class="relative z-10 bg-black text-white px-2 block pb-4 mix-blend-multiply">
              {t('hero.title')}
           </span>
         </div>
