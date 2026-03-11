@@ -22,23 +22,19 @@ const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
     <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
 
       <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 md:mb-8 leading-tight hero-enter">
-        <div class="relative inline-block overflow-hidden pb-4">
-          <!-- The video itself, hidden visually but playing to trigger the blend -->
-          <video autoPlay loop muted playsInline preload="auto" class="absolute inset-0 w-full h-full object-cover z-0 hidden md:block opacity-0 transition-opacity duration-1000" style="mix-blend-mode: screen;" oncanplay="this.classList.remove('opacity-0'); this.nextElementSibling.classList.remove('opacity-0');" onloadeddata="this.classList.remove('opacity-0'); this.nextElementSibling.classList.remove('opacity-0');">
+        <div class="relative inline-block overflow-hidden pb-4 bg-white/5 md:bg-white rounded-3xl">
+          <!-- The video itself, hidden visually on mobile, playing as normal behind the text on desktop -->
+          <video autoPlay loop muted playsInline preload="auto" class="absolute inset-0 w-full h-full object-cover z-0 hidden md:block opacity-0 transition-opacity duration-1000" oncanplay="this.classList.remove('opacity-0'); this.nextElementSibling.classList.remove('opacity-0');" onloadeddata="this.classList.remove('opacity-0'); this.nextElementSibling.classList.remove('opacity-0');">
             <source src={`${base}/videos/abstract-metal.mp4`} type="video/mp4" />
           </video>
           
-          <!-- The text that masks it (Hidden initially to let fallback show until video is ready) -->
-          <span class="relative z-10 bg-black text-transparent bg-clip-text font-black opacity-0 transition-opacity duration-1000 hidden md:inline-block pb-4" style="mix-blend-mode: multiply;">
+          <!-- The text that clips the video through mix-blend-mode: multiply (makes white transparent) -->
+          <span class="relative z-10 bg-black text-white px-2 opacity-0 transition-opacity duration-1000 hidden md:inline-block pb-4 mix-blend-multiply">
              {t('hero.title')}
           </span>
           
-          <!-- Fallback layer for when video doesn't load/mobile, sits underneath on desktop -->
-          <span class="absolute inset-x-0 top-0 bottom-4 z-[-1] metallic-gradient hidden md:flex items-center justify-center font-black pb-4">
-             {t('hero.title')}
-          </span>
           <!-- Mobile only visible text so block element maintains height on mobile -->
-          <span class="metallic-gradient md:hidden relative z-20 font-black pb-4 block">
+          <span class="metallic-gradient md:hidden relative z-20 font-black pb-4 px-2 block">
              {t('hero.title')}
           </span>
         </div>
