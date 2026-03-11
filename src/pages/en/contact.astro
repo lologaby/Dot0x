@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('en');
 ---
-<Layout title="Contact">
+<Layout title="Contact" description="Get in touch with Dot0x. Book a free consultation and discover how AI automation and SEO can grow your business in Puerto Rico.">
   <section class="pt-32 pb-20 px-6 max-w-4xl mx-auto w-full">
     <div class="text-center mb-16">
       <h1 class="text-4xl md:text-6xl font-bold metallic-gradient mb-6">Get in Touch</h1>
@@ -14,10 +14,10 @@ const t = useTranslations('en');
         <!-- Direct Contact Info -->
         <div class="glass-panel p-8 rounded-2xl flex flex-col justify-center">
             <h2 class="text-2xl font-bold text-white mb-6">Direct Information</h2>
-            
+
             <div class="space-y-6">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
                     <div>
@@ -27,35 +27,87 @@ const t = useTranslations('en');
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </div>
                     <div>
                         <p class="text-sm text-neutral-400 block">LinkedIn</p>
-                        <a href="https://pr.linkedin.com/in/alex-berrios-mangual-b26b5a241" target="_blank" class="text-lg font-medium text-white hover:text-neutral-300 transition">Alex Berrios Mangual</a>
+                        <a href="https://www.linkedin.com/in/alex-berrios-mangual-b26b5a241" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-white hover:text-neutral-300 transition">Alex Berrios Mangual</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Form Placeholder -->
-        <form class="glass-panel p-8 rounded-2xl flex flex-col gap-4">
+        <!-- Contact Form — powered by Formspree (free tier).
+             Sign up at formspree.io, create a form, and replace FORM_ID below. -->
+        <form
+          id="contact-form"
+          method="POST"
+          action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+          class="glass-panel p-8 rounded-2xl flex flex-col gap-4"
+        >
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Name</label>
-                <input type="text" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition" placeholder="Your name" />
+                <label for="name-en" class="block text-sm text-neutral-400 mb-2">Name</label>
+                <input id="name-en" type="text" name="name" required
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/20 transition"
+                  placeholder="Your name" />
             </div>
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Email</label>
-                <input type="email" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition" placeholder="you@email.com" />
+                <label for="email-en" class="block text-sm text-neutral-400 mb-2">Email</label>
+                <input id="email-en" type="email" name="email" required
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/20 transition"
+                  placeholder="you@email.com" />
             </div>
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Message</label>
-                <textarea class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition min-h-[120px]" placeholder="How can we help you?"></textarea>
+                <label for="message-en" class="block text-sm text-neutral-400 mb-2">Message</label>
+                <textarea id="message-en" name="message" required
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/20 transition min-h-[120px]"
+                  placeholder="How can we help you?"></textarea>
             </div>
-            <button type="button" class="mt-2 w-full bg-white text-black font-semibold rounded-lg px-4 py-3 hover:bg-neutral-200 transition">
+            <button type="submit" id="submit-btn-en"
+              class="mt-2 w-full bg-white text-black font-semibold rounded-lg px-4 py-3 hover:bg-neutral-200 active:scale-95 transition-all cursor-pointer">
                 Send Message
             </button>
+            <p id="form-status-en" class="text-center text-sm hidden"></p>
         </form>
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const btn = document.getElementById('submit-btn-en') as HTMLButtonElement | null;
+  const status = document.getElementById('form-status-en') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!btn || !status) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = '✓ Message sent! We\'ll be in touch shortly.';
+        status.className = 'text-center text-sm text-green-400';
+        btn.textContent = 'Message Sent';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Please call us directly.';
+      status.className = 'text-center text-sm text-red-400';
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+
+    status.classList.remove('hidden');
+  });
+</script>

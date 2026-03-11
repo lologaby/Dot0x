@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
 const t = useTranslations('es');
 ---
-<Layout title="Contacto">
+<Layout title="Contacto" description="Contáctanos en Dot0x. Agenda una consultoría gratuita y descubre cómo la automatización con IA y el SEO pueden hacer crecer tu negocio en Puerto Rico.">
   <section class="pt-32 pb-20 px-6 max-w-4xl mx-auto w-full">
     <div class="text-center mb-16">
       <h1 class="text-4xl md:text-6xl font-bold metallic-gradient mb-6">Ponte en Contacto</h1>
@@ -14,10 +14,10 @@ const t = useTranslations('es');
         <!-- Direct Contact Info -->
         <div class="glass-panel p-8 rounded-2xl flex flex-col justify-center">
             <h2 class="text-2xl font-bold text-white mb-6">Información Directa</h2>
-            
+
             <div class="space-y-6">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
                     <div>
@@ -27,35 +27,87 @@ const t = useTranslations('es');
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </div>
                     <div>
                         <p class="text-sm text-neutral-400 block">LinkedIn</p>
-                        <a href="https://pr.linkedin.com/in/alex-berrios-mangual-b26b5a241" target="_blank" class="text-lg font-medium text-white hover:text-neutral-300 transition">Alex Berrios Mangual</a>
+                        <a href="https://www.linkedin.com/in/alex-berrios-mangual-b26b5a241" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-white hover:text-neutral-300 transition">Alex Berrios Mangual</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Contact Form Placeholder -->
-        <form class="glass-panel p-8 rounded-2xl flex flex-col gap-4">
+        <!-- Formulario — usa Formspree (gratis).
+             Regístrate en formspree.io, crea un formulario y reemplaza FORM_ID abajo. -->
+        <form
+          id="contact-form-es"
+          method="POST"
+          action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+          class="glass-panel p-8 rounded-2xl flex flex-col gap-4"
+        >
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Nombre</label>
-                <input type="text" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition" placeholder="Tu nombre" />
+                <label for="name-es" class="block text-sm text-neutral-400 mb-2">Nombre</label>
+                <input id="name-es" type="text" name="name" required
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/20 transition"
+                  placeholder="Tu nombre" />
             </div>
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Email</label>
-                <input type="email" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition" placeholder="tu@email.com" />
+                <label for="email-es" class="block text-sm text-neutral-400 mb-2">Email</label>
+                <input id="email-es" type="email" name="email" required
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/20 transition"
+                  placeholder="tu@email.com" />
             </div>
             <div>
-                <label class="block text-sm text-neutral-400 mb-2">Mensaje</label>
-                <textarea class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 transition min-h-[120px]" placeholder="¿En qué podemos ayudarte?"></textarea>
+                <label for="message-es" class="block text-sm text-neutral-400 mb-2">Mensaje</label>
+                <textarea id="message-es" name="message" required
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/20 transition min-h-[120px]"
+                  placeholder="¿En qué podemos ayudarte?"></textarea>
             </div>
-            <button type="button" class="mt-2 w-full bg-white text-black font-semibold rounded-lg px-4 py-3 hover:bg-neutral-200 transition">
+            <button type="submit" id="submit-btn-es"
+              class="mt-2 w-full bg-white text-black font-semibold rounded-lg px-4 py-3 hover:bg-neutral-200 active:scale-95 transition-all cursor-pointer">
                 Enviar Mensaje
             </button>
+            <p id="form-status-es" class="text-center text-sm hidden"></p>
         </form>
     </div>
   </section>
 </Layout>
+
+<script>
+  const form = document.getElementById('contact-form-es') as HTMLFormElement | null;
+  const btn = document.getElementById('submit-btn-es') as HTMLButtonElement | null;
+  const status = document.getElementById('form-status-es') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!btn || !status) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = '✓ ¡Mensaje enviado! Te contactaremos pronto.';
+        status.className = 'text-center text-sm text-green-400';
+        btn.textContent = 'Mensaje Enviado';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      status.textContent = 'Algo salió mal. Por favor llámanos directamente.';
+      status.className = 'text-center text-sm text-red-400';
+      btn.disabled = false;
+      btn.textContent = 'Enviar Mensaje';
+    }
+
+    status.classList.remove('hidden');
+  });
+</script>
