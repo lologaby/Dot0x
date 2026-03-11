@@ -7,7 +7,21 @@ const targetUrl = `${base === '/' ? '' : base}/${defaultLang}`;
 <html>
   <head>
     <meta http-equiv="refresh" content={`0;url=${targetUrl}`} />
-    <title>Redirecting...</title>
+    <title>Dot0x Puerto Rico - AI innovation</title>
+    <meta name="description" content="Dot0x – Agentes IA, SEO Local y Automatización para negocios en Puerto Rico. Reduce costos, duplica ventas y trabaja menos." />
+    
+    <!-- Open Graph for WhatsApp/Facebook/LinkedIn Snippets -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dot0x Puerto Rico" />
+    <meta property="og:title" content="Dot0x Puerto Rico - AI innovation" />
+    <meta property="og:description" content="Dot0x – Agentes IA, SEO Local y Automatización para negocios en Puerto Rico. Reduce costos, duplica ventas y trabaja menos." />
+    <meta property="og:image" content={`${base}/images/og-image.jpg`} />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dot0x Puerto Rico - AI innovation" />
+    <meta name="twitter:description" content="Dot0x – Agentes IA, SEO Local y Automatización para negocios en Puerto Rico. Reduce costos, duplica ventas y trabaja menos." />
+    <meta name="twitter:image" content={`${base}/images/og-image.jpg`} />
   </head>
   <body>
     <script define:vars={{ targetUrl }}>
