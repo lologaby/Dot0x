@@ -15,17 +15,21 @@ const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
     
     <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
       <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 relative inline-block leading-tight">
-        <div class="relative inline-block pb-2">
-          <!-- White text acts as the reveal mask for the video -->
-          <span class="relative z-0 text-white font-black block">
-            {t('hero.title')}
-          </span>
+        <!-- Mobile: metallic gradient text -->
+        <span class="block md:hidden font-black metallic-gradient">{t('hero.title')}</span>
 
-          <!-- Video on top with multiply — shows only through white text, black bg absorbs the rest -->
-          <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover hidden md:block" style="z-index: 1; mix-blend-mode: multiply; pointer-events: none;">
-            <source src={`${base}/videos/abstract-metal.mp4`} type="video/mp4" />
-          </video>
-        </div>
+        <!-- Desktop: video piped through text via canvas background-clip -->
+        <span
+          id="hero-text-desktop"
+          class="hidden md:block font-black"
+          style="color: transparent; -webkit-background-clip: text; background-clip: text; background-size: 100% 100%; background-image: linear-gradient(135deg, #e4e6ea 0%, #a9adb5 50%, #767a83 100%);"
+        >{t('hero.title')}</span>
+
+        <!-- Hidden video source (decoded in background, drawn to canvas each frame) -->
+        <video id="hero-video-src" autoplay loop muted playsinline
+          style="position:absolute;width:0;height:0;opacity:0;pointer-events:none;overflow:hidden;">
+          <source src={`${base}/videos/abstract-metal.mp4`} type="video/mp4" />
+        </video>
       </h1>
       <p class="mt-6 text-lg md:text-2xl text-neutral-300 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
         {t('hero.subtitle')}
@@ -167,3 +171,48 @@ const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
      </div>
   </section>
 </Layout>
+
+<script>
+  function initHeroVideoText() {
+    if (!window.matchMedia('(min-width: 768px)').matches) return;
+
+    const textEl = document.getElementById('hero-text-desktop') as HTMLElement | null;
+    const video = document.getElementById('hero-video-src') as HTMLVideoElement | null;
+    if (!textEl || !video) return;
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    function resize() {
+      const rect = textEl!.getBoundingClientRect();
+      if (rect.width > 0) {
+        canvas.width = Math.round(rect.width);
+        canvas.height = Math.round(rect.height);
+      }
+    }
+
+    let lastFrame = 0;
+    function frame(ts: number) {
+      if (ts - lastFrame >= 33 && !video!.paused && canvas.width > 0) {
+        lastFrame = ts;
+        ctx!.drawImage(video!, 0, 0, canvas.width, canvas.height);
+        textEl!.style.backgroundImage = `url("${canvas.toDataURL('image/jpeg', 0.8)}")`;
+      }
+      requestAnimationFrame(frame);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    if (video.readyState >= 2) {
+      resize();
+      requestAnimationFrame(frame);
+    } else {
+      video.addEventListener('loadeddata', () => { resize(); requestAnimationFrame(frame); }, { once: true });
+    }
+  }
+
+  document.addEventListener('astro:page-load', initHeroVideoText);
+  initHeroVideoText();
+</script>
