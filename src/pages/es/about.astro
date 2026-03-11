@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { useTranslations } from '../../i18n/utils';
+import { Image } from 'astro:assets';
+import profileImg from '../../assets/profile.jpg';
 const t = useTranslations('es');
 const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 ---
@@ -11,7 +13,7 @@ const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
       <!-- Profile Image -->
       <div class="flex justify-center lg:justify-end">
          <div class="relative w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden glass-panel ring-1 ring-white/10 shadow-2xl">
-            <img src={`${base}/images/profile.jpg`} alt="Alex Berrios Mangual" class="w-full h-full object-cover object-center z-10 relative" />
+            <Image src={profileImg} alt="Alex Berrios Mangual" class="w-full h-full object-cover object-center z-10 relative" width={400} />
             <div class="absolute inset-0 bg-gradient-to-tr from-zinc-800 to-zinc-400 opacity-20 z-0"></div>
          </div>
       </div>
@@ -23,13 +25,13 @@ const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
         
         <div class="space-y-6 text-neutral-400 leading-relaxed">
           <p>
-            ¡Hola! Soy Alex Berrios Mangual, Especialista en Infraestructura TI y Profesional DevOps de Guaynabo, Puerto Rico. Me especializo en hacer que los sistemas corporativos realmente funcionen, cerrando la brecha entre redes y software para modernizar la infraestructura tecnológica.
+            ¡Hola! Soy Alex Berrios Mangual, de Bayamón, Puerto Rico. En el papel, soy un Especialista en Infraestructura TI y Profesional DevOps. En la vida real, soy un entusiasta obsesionado con la tecnología que no descansa hasta que lo nuevo funciona.
           </p>
           <p>
-            Actualmente, me desempeño como Especialista de TI para un importante grupo minorista en Puerto Rico, administrando ambientes corporativos con Active Directory, Microsoft 365, Intune y sistemas POS de alta disponibilidad. Anteriormente, perfeccioné mis habilidades como Técnico de NOC en WorldNet Telecommunications, asegurando el cumplimiento de SLAs y configurando enrutadores y firewalls corporativos.
+            Mi pasión por la automatización nace de pasar horas en mi "homelab", probando distribuciones de Linux, montando máquinas virtuales (VMs) y haciendo pruebas exhaustivas de software (software testing). Esa misma curiosidad y nivel de detalle es lo que aplico hoy como Especialista de TI para un importante grupo minorista, administrando sistemas corporativos complejos (Active Directory, Microsoft 365, sistemas POS de alta disponibilidad) y resolviendo problemas antes de que afecten las ventas.
           </p>
           <p>
-            Mi objetivo con Dot0x es empoderar a las empresas ofreciendo soluciones corporativas adaptadas a las necesidades modernas. Desde la optimización de entornos minoristas con automatización hasta la integración de voz con Inteligencia Artificial, me apasiona demostrar cómo la tecnología puede ser el mejor aliado para su crecimiento.
+            Mi objetivo con Dot0x no es venderte humo ni palabrería técnica. Mi objetivo es tomar esa misma infraestructura robusta de nivel empresarial y esas automatizaciones avanzadas, y ponerlas a trabajar para tu negocio. Si necesitas agentes de IA que respondan por ti 24/7 o sistemas que se sincronicen solos, yo seré la persona detrás del telón asegurándome de que corra impecable.
           </p>
         </div>
 
