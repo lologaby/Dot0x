@@ -22,7 +22,7 @@ export const ui = {
     'hero.subtitle': 'En Puerto Rico, el tiempo es dinero. Implementamos Agentes de Inteligencia Artificial, SEO Local y Automatización para que tu negocio corra en piloto automático mientras tú te enfocas en crecer.',
     'hero.cta': 'Agenda tu Consultoría Gratis',
     'hero.cta.sub': 'Llamada de 15 min · Sin compromisos · 100% gratis',
-    'hero.social': '+40 negocios en Puerto Rico ya automatizados',
+    'hero.social': '4 años en infraestructura IT corporativa · Ahora disponible para tu negocio',
 
     // SOCIAL PROOF BAR
     'proof.title': 'Nuestros clientes usan las mismas herramientas que las empresas más exitosas del mundo',
@@ -50,18 +50,18 @@ export const ui = {
     'trust.title': '¿Por qué Dot0x?',
     'trust.desc': 'Entendemos el mercado de Puerto Rico, pero jugamos con las reglas de Silicon Valley. No te vendemos "tecnología", te vendemos resultados. Nuestro enfoque es 100% en retorno de inversión (ROI). Si no te ahorra tiempo o no te hace dinero automático, no lo instalamos.',
 
-    // TESTIMONIALS
-    'testimonials.title': 'Lo que dicen nuestros clientes',
-    'testimonials.subtitle': 'Resultados reales de negocios en Puerto Rico.',
-    'testimonials.1.name': 'Carlos Rodríguez',
-    'testimonials.1.role': 'Dueño · Clínica Médica San Juan',
-    'testimonials.1.text': 'El agente IA que implementaron contestó más de 300 preguntas de pacientes en el primer mes, liberando a mi recepcionista para tareas más importantes. Ahorramos fácilmente 20 horas semanales.',
-    'testimonials.2.name': 'María González',
-    'testimonials.2.role': 'CEO · Boutique Éclat PR',
-    'testimonials.2.text': 'En 45 días pasamos de la página 8 a la posición #2 en Google para "boutique en Ponce". Las visitas a la tienda aumentaron en un 40%. Resultados reales, no promesas.',
-    'testimonials.3.name': 'Javier Martínez',
-    'testimonials.3.role': 'Director · Grupo Inmobiliario RMC',
-    'testimonials.3.text': 'Automatizaron todo nuestro proceso de seguimiento de clientes. Lo que antes tomaba 3 horas diarias ahora corre solo. Cerramos 2 propiedades extra el primer mes.',
+    // LAUNCH OFFER SECTION (replaces testimonials for now — no clients yet)
+    'testimonials.title': 'Plan de Lanzamiento — Precio Especial',
+    'testimonials.subtitle': 'Primeros 5 negocios en Puerto Rico obtienen precio de lanzamiento y acceso directo al fundador.',
+    'testimonials.1.name': 'Agente IA 24/7',
+    'testimonials.1.role': 'Inicio desde $297/mes — Precio de Lanzamiento',
+    'testimonials.1.text': 'Configuro un asistente virtual entrenado 100% con la información de tu negocio. Atiende clientes, agenda citas y responde dudas sin que tengas que hacer nada. Tecnología que usamos en entornos corporativos, ahora para tu negocio.',
+    'testimonials.2.name': 'SEO Local',
+    'testimonials.2.role': 'Inicio desde $397/mes — Precio de Lanzamiento',
+    'testimonials.2.text': 'Posicionamos tu negocio en Google para que aparezca primero cuando alguien en tu área busca lo que vendes. Auditoría inicial gratis. Estrategia basada en los mismos principios técnicos de empresas de telecomunicaciones.',
+    'testimonials.3.name': 'Infraestructura IT & Automatización',
+    'testimonials.3.role': 'Consultoría desde $597 — Pago Único',
+    'testimonials.3.text': 'Configuro e implemento 3CX, Microsoft Intune, Samsung Knox, servidores Docker listos para producción, redes empresariales y automatizaciones. El mismo nivel técnico que configuro para empresas, ahora disponible para tu negocio.',
 
     // FAQ
     'faq.title': 'Preguntas Frecuentes',
@@ -78,8 +78,8 @@ export const ui = {
     'faq.5.a': 'Trabajamos con total transparencia. Reportes mensuales con métricas claras. Si en los primeros 30 días no hay progreso medible, ajustamos la estrategia sin costo adicional.',
 
     // CTA
-    'cta.title': 'Deja de perder tiempo y dinero.',
-    'cta.subtitle': 'El futuro de los negocios en la Isla ya está aquí. Obtén tu auditoría tecnológica gratuita y descubre cuánto dinero estás dejando sobre la mesa.',
+    'cta.title': 'Sé de los primeros 5.',
+    'cta.subtitle': 'Los primeros 5 negocios que me contraten obtienen precio de lanzamiento y acceso directo a mí. Sin intermediarios. Sin agencias. Solo tecnología real implementada por alguien que lo hace todos los días.',
     'cta.button': 'Agendar Auditoría Gratuita (15 min)',
     'cta.sub': 'Sin compromisos · Respuesta en menos de 24 horas',
 
@@ -98,7 +98,7 @@ export const ui = {
     'hero.subtitle': 'Time is money. We implement AI Agents, Local SEO, and Workflow Automation so your business runs on autopilot while you focus on scaling.',
     'hero.cta': 'Book a Free Consultation',
     'hero.cta.sub': '15-min call · No commitment · 100% free',
-    'hero.social': '40+ businesses in Puerto Rico already automated',
+    'hero.social': '4 years in corporate IT infrastructure · Now available for your business',
 
     // SOCIAL PROOF BAR
     'proof.title': 'Our clients use the same tools as the world\'s most successful companies',
@@ -126,18 +126,18 @@ export const ui = {
     'trust.title': 'Why Dot0x?',
     'trust.desc': 'We understand the local market, but play by Silicon Valley rules. We don\'t sell "technology", we sell results. Our focus is 100% on ROI. If it doesn\'t save you time or make you money on autopilot, we don\'t build it.',
 
-    // TESTIMONIALS
-    'testimonials.title': 'What Our Clients Say',
-    'testimonials.subtitle': 'Real results from businesses in Puerto Rico.',
-    'testimonials.1.name': 'Carlos Rodríguez',
-    'testimonials.1.role': 'Owner · Clínica Médica San Juan',
-    'testimonials.1.text': 'The AI agent they implemented answered over 300 patient questions in the first month, freeing my receptionist for more important tasks. We easily saved 20 hours per week.',
-    'testimonials.2.name': 'María González',
-    'testimonials.2.role': 'CEO · Boutique Éclat PR',
-    'testimonials.2.text': 'In 45 days we went from page 8 to position #2 on Google for "boutique in Ponce". Store visits increased by 40%. Real results, not promises.',
-    'testimonials.3.name': 'Javier Martínez',
-    'testimonials.3.role': 'Director · Grupo Inmobiliario RMC',
-    'testimonials.3.text': 'They automated our entire client follow-up process. What used to take 3 hours daily now runs on its own. We closed 2 extra properties the first month.',
+    // LAUNCH OFFER SECTION
+    'testimonials.title': 'Launch Plan — Special Pricing',
+    'testimonials.subtitle': 'First 5 businesses in Puerto Rico get launch pricing and direct access to the founder.',
+    'testimonials.1.name': '24/7 AI Agent',
+    'testimonials.1.role': 'Starting from $297/mo — Launch Price',
+    'testimonials.1.text': 'I configure a virtual assistant trained 100% on your business. It handles customers, books appointments, and answers questions without you lifting a finger. Enterprise-grade technology, now for your business.',
+    'testimonials.2.name': 'Local SEO',
+    'testimonials.2.role': 'Starting from $397/mo — Launch Price',
+    'testimonials.2.text': 'We position your business on Google so you appear first when someone nearby searches for what you sell. Free initial audit. Strategy built on the same technical principles used by telecom companies.',
+    'testimonials.3.name': 'IT Infrastructure & Automation',
+    'testimonials.3.role': 'Consulting from $597 — One-Time',
+    'testimonials.3.text': 'I configure 3CX, Microsoft Intune, Samsung Knox, production-ready Docker servers, enterprise networks, and automations. The same technical level I implement for corporations, now available for your business.',
 
     // FAQ
     'faq.title': 'Frequently Asked Questions',
@@ -154,8 +154,8 @@ export const ui = {
     'faq.5.a': 'We work with full transparency. Monthly reports with clear metrics. If there\'s no measurable progress in the first 30 days, we adjust the strategy at no extra cost.',
 
     // CTA
-    'cta.title': 'Stop leaving money on the table.',
-    'cta.subtitle': 'The future of business is already here. Get your free tech audit today and discover how much time and money you can reclaim.',
+    'cta.title': 'Be one of the first 5.',
+    'cta.subtitle': 'The first 5 businesses I work with get launch pricing and direct founder access. No agencies. No middlemen. Real technology implemented by someone who does it every day.',
     'cta.button': 'Book Free Audit (15 min)',
     'cta.sub': 'No commitment · Response in less than 24 hours',
 
