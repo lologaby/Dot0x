@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { getLangFromUrl } from '../i18n/utils';
 
 export interface Props {
@@ -67,6 +68,7 @@ const fullTitle = `${title} | Dot0x`;
 		</main>
         
         <Footer />
+        <WhatsAppButton />
 	</body>
 </html>
 

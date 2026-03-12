@@ -1,0 +1,31 @@
+---
+// WhatsAppButton.astro — Floating WhatsApp chat button
+// Appears on all pages, bottom-right corner
+const phone = '17874609493'; // International format with country code
+---
+
+<a
+  id="whatsapp-float"
+  href={`https://wa.me/${phone}?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20sus%20servicios.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar por WhatsApp"
+  title="Escríbenos por WhatsApp"
+  class="fixed bottom-6 right-6 z-50 flex items-center gap-3 group"
+>
+  <!-- Pulse ring -->
+  <span class="absolute inset-0 rounded-full bg-green-500 opacity-30 animate-ping pointer-events-none"></span>
+
+  <!-- Main button -->
+  <div class="relative w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-[0_4px_24px_rgba(37,211,102,0.5)] hover:shadow-[0_4px_32px_rgba(37,211,102,0.7)] hover:scale-110 transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-7 h-7 fill-white">
+      <path d="M16.002 2.667C8.637 2.667 2.668 8.637 2.668 16c0 2.355.636 4.59 1.745 6.517L2.668 29.333l7.022-1.718A13.277 13.277 0 0016.002 29.333c7.363 0 13.332-5.969 13.332-13.333S23.365 2.667 16.002 2.667zm0 24.333a11.003 11.003 0 01-5.616-1.543l-.403-.24-4.165 1.02 1.06-4.054-.263-.416A10.968 10.968 0 015 16C5 9.935 9.935 5 16.002 5 22.065 5 27 9.935 27 16S22.065 27 16.002 27zm5.927-8.063c-.325-.163-1.924-.95-2.222-1.059-.298-.107-.516-.163-.733.163-.218.325-.843 1.059-1.034 1.277-.19.217-.38.245-.705.082-.325-.163-1.372-.507-2.614-1.612-.965-.862-1.617-1.926-1.808-2.251-.19-.325-.02-.5.144-.662.147-.146.325-.38.488-.57.163-.19.217-.326.325-.543.109-.217.054-.407-.027-.57-.082-.163-.733-1.768-1.005-2.421-.264-.635-.534-.548-.733-.558l-.624-.01c-.217 0-.57.082-.869.407-.298.325-1.14 1.114-1.14 2.716 0 1.602 1.167 3.149 1.33 3.366.163.217 2.298 3.509 5.572 4.919.778.336 1.385.536 1.858.687.781.248 1.493.213 2.055.129.627-.094 1.924-.787 2.195-1.547.27-.76.27-1.41.19-1.547-.082-.136-.298-.217-.624-.38z"/>
+    </svg>
+  </div>
+
+  <!-- Tooltip label (appears on hover, desktop only) -->
+  <span class="hidden md:block absolute right-16 bg-[#25D366] text-white text-sm font-semibold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 whitespace-nowrap pointer-events-none">
+    ¿Hablamos? 👋
+    <span class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1.5 border-4 border-transparent border-l-[#25D366]"></span>
+  </span>
+</a>
